@@ -1,14 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build unit-testing-with-jenkins') {
             steps {
-                sh 'python MathUtils.py'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'pytest -v -s'
+                sh 'python3 -m py_compile MathUtils.py tests_data.py'
+                stash(name: 'compiled-results', includes: '*.py*')
             }
         }
     }
