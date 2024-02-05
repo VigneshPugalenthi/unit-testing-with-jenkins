@@ -13,7 +13,7 @@ pipeline {
             post {
                 always {
                     junit 'test-reports/results.xml'
-                    emailext (attachLog: true, body: '', subject: '', to: 'vignesh1998.vk@gmail.com')
+                    emailext (attachLog: true, body: '$DEFAULT_CONTENT', replyTo: '$DEFAULT_REPLYTO', subject: '$DEFAULT_SUBJECT', to: 'vignesh1998.vk@gmail.com')
                 }
             }
         }
