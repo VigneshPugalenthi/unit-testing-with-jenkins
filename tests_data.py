@@ -2,7 +2,8 @@ class TestsData:
     testDataAddition = [
         (1, 2, 3),
         (11, 0, 11),
-        (9, -1, 8)
+        (9, -1, 8),
+        (8, 12, 20)
     ]
 
     testDataSubtraction = [
