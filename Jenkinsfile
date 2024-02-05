@@ -13,6 +13,7 @@ pipeline {
             post {
                 always {
                     junit 'test-reports/results.xml'
+                    emailext (attachLog: true, body: '', subject: '', to: 'vignesh1998.vk@gmail.com')
                 }
             }
         }
