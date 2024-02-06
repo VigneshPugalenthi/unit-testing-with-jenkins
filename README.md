@@ -26,7 +26,7 @@ The objective of the repository is to implement basic math utility functions in 
 
 ### Build Log
 
-<pre style="max-height:300px; overflow:auto" max-height="10px">Started by GitHub push by VigneshPugalenthi
+<pre style="max-height:200px; overflow:auto" max-height="10px">Started by GitHub push by VigneshPugalenthi
 Obtained Jenkinsfile from git https://github.com/VigneshPugalenthi/unit-testing-with-jenkins.git
 [Pipeline] Start of Pipeline
 [Pipeline] node
