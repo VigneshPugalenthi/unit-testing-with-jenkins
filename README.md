@@ -22,7 +22,7 @@ The objective of the repository is to implement basic math utility functions in 
 
 ### Pipeline Overview
 
-<img width="1458" alt="Screenshot 2024-02-05 at 3 32 59 PM" src="https://github.com/VigneshPugalenthi/unit-testing-with-jenkins/assets/46440651/0157ced0-8d26-428b-8894-f8129a5124bd">
+<img width="1458" alt="Pipeline Overview" src="assets/pipeline-overview.png">
 
 
 
