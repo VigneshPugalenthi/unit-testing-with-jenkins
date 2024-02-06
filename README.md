@@ -4,7 +4,7 @@
 
 
 ## PROBLEM STATEMENT
-The objective of the repository is to implement basic math utility functions in Python <code><img width="12" src="https://user-images.githubusercontent.com/25181517/183423507-c056a6f9-1ba8-4312-a350-19bcbc5a8697.png" alt="Python" title="Python"/></code>, accompanied by test cases that can be tested using pytest <code><img width="12" src="https://user-images.githubusercontent.com/25181517/184117132-9e89a93b-65fb-47c3-91e7-7d0f99e7c066.png" alt="pytest" title="pytest"/></code>. Additionally, Jenkins <code><img width="12" src="https://user-images.githubusercontent.com/25181517/179090274-733373ef-3b59-4f28-9ecb-244bea700932.png" alt="Jenkins" title="Jenkins"/></code> integration will be set up for automated testing. 
+The objective of the repository is to implement basic math utility functions in Python <img align="center" width="20px" alt="python" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png?size=48"/>, accompanied by test cases that can be tested using pytest <img align="center" width="25px" alt="pytest" src="https://avatars.githubusercontent.com/u/8897583?s=40&v=4"/>. Additionally, Jenkins <img align="center" alt="jenkins" width="18px" src="https://avatars.githubusercontent.com/u/107424?s=40&v=4"/> integration will be set up for automated testing. 
 
 ## Python
 [MathUtils.py](/MathUtils.py) contains basic mathematical functions such as addition, subtraction, multiplication and division.
@@ -24,7 +24,61 @@ The objective of the repository is to implement basic math utility functions in 
 
 <img width="1458" alt="Pipeline Overview" src="assets/pipeline-overview.png">
 
+### Build Log
 
+<pre style="max-height:300px; overflow:auto" max-height="10px">Started by GitHub push by VigneshPugalenthi
+Obtained Jenkinsfile from git https://github.com/VigneshPugalenthi/unit-testing-with-jenkins.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /Users/vigneshpugalenthi/.jenkins/workspace/math-utils-unit-testing
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /Users/vigneshpugalenthi/.jenkins/workspace/math-utils-unit-testing/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/VigneshPugalenthi/unit-testing-with-jenkins.git # timeout=10
+Fetching upstream changes from https://github.com/VigneshPugalenthi/unit-testing-with-jenkins.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.39.3 (Apple Git-145)'
+ > git fetch --tags --force --progress -- https://github.com/VigneshPugalenthi/unit-testing-with-jenkins.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 82bd4b4707ba0cd8b7121debc057b661b402314a (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 82bd4b4707ba0cd8b7121debc057b661b402314a # timeout=10
+Commit message: "Added assets folder"
+ > git rev-list --no-walk 8d358919c2cf6d6c0fcd3223d2202f3caa85dd76 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (build)
+[Pipeline] sh
++ python3 -m py_compile MathUtils.py tests_data.py
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Test)
+[Pipeline] sh
++ python3 -m pytest --junit-xml test-reports/results.xml test_math_utils.py
+============================= test session starts ==============================
+platform darwin -- Python 3.11.2, pytest-8.0.0, pluggy-1.4.0
+rootdir: /Users/vigneshpugalenthi/.jenkins/workspace/math-utils-unit-testing
+collected 16 items
 
+test_math_utils.py ................                                      [100%]
 
+- generated xml file: /Users/vigneshpugalenthi/.jenkins/workspace/math-utils-unit-testing/test-reports/results.xml -
+============================== 16 passed in 0.02s ==============================
+Post stage
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] emailext
+Sending email to: vignesh1998.vk@gmail.com
+</pre>
 
